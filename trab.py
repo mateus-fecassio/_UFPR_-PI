@@ -9,11 +9,13 @@ def media(m_list):
     sum = 0
     for i in range(len(m_list)):
         sum += m_list[i]
-    return (int)(sum/len(m_list))
-#TESTAR
+    sum = sum/len(m_list)
+    return int(sum)
+#FINALIZADO
 
 
 def moda(m_list):
+    #lista de contadores:
     l_temp = [0]*256
     
     for i in range(len(m_list)):
@@ -21,12 +23,14 @@ def moda(m_list):
         l_temp[index] += 1
     
     bigger = l_temp[0]
+    index = 0
     for i in range(256):
         if (l_temp[i] > bigger):
+            index = i
             bigger = l_temp[i]
     
-    return bigger
-#TESTAR
+    return index
+#FINALIZADO
 
 
 def mediana(m_list):
@@ -48,15 +52,19 @@ def mediana(m_list):
         value = m_list(cut+1)
     
     return value  
-#TESTAR
+#FINALIZADO
+
 
 def sampling(image, height, width, percentage, technique):
     if (percentage > 0 and percentage < 100):
         
         
         
+        new_image = np.zeros((4,4), dtype=np.int)
         
-    return image
+        
+        
+    return new_image
 #FAZER
     
 
@@ -152,7 +160,6 @@ def main():
     ap = argparse.ArgumentParser()
     sys_lenght = len(sys.argv)
     
-    
     #----------------ROTINA DE TRATAMENTO DA LINHA DE COMANDO----------------#
     if (sys_lenght < 3 or sys_lenght > 9):
         usage()
@@ -219,8 +226,7 @@ def main():
     image = np.concatenate((original, image), axis=1)
     cv2.imshow("RESULTADO", image)
     cv2.waitKey(0)
-    
-#FAZER
+#FINALIZADO(acho)
 
 
 
