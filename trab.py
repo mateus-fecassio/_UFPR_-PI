@@ -13,25 +13,25 @@ def media(m_list):
 #TESTAR
 
 
-def moda(m_list):
+#def moda(m_list):
    
 #TESTAR
 
 
-def mediana(m_list):
-    m_list.sort()
-    
-    lenght = len(m_list)
-    
-    #CASO PAR
-    if (lenght % 2 == 0):
-        
-    
-    #CASO ÍMPAR
-    else:
-        
-    
-#TESTAR
+#def mediana(m_list):
+#    m_list.sort()
+#    
+#    lenght = len(m_list)
+#    
+#    #CASO PAR
+#    if (lenght % 2 == 0):
+#        
+#    
+#    #CASO ÍMPAR
+#    else:
+#        
+#    
+##TESTAR
 
 
 def most_significative(histogram, l_inf, l_sup):
@@ -112,36 +112,70 @@ def build_histogram(image, height, width):
 #FINALIZADO
     
     
-
+def usage():
+    print('EXEMPLOS DE FORMAS DE USO:')
+    print('     - Somente quantizar: python3 trab.py -i exemplo.png -q 2')
+    print('     - Somente amostrar: python3 trab.py -i exemplo.png -a 50 -t media')
+    print('     - Quantizar e amostrar: python3 trab.py -i exemplo.png -q 2 -a 50 -t media')
+#FINALIZADO
 
 
 
 def main():
     histogram = []
+    
     ap = argparse.ArgumentParser()
-    
-    ap.add_argument("-i", "--image", required = True, help = "Path to the image")
-    #ap.add_argument("-a", "--sampling", required = True, help = "Sampling of the image")
-    #ap.add_argument("-t", "--technique", required = True, help = "Technique to be performed")
-    
-    ap.add_argument("-q", "--quantization", required = True, help = "Level of quantization")
+    sys_lenght = len(sys.argv)
     
     
-    args = vars(ap.parse_args())
+    #----------------ROTINA DE TRATAMENTO DA LINHA DE COMANDO----------------#
+    if (sys_lenght < 3 or sys_lenght > 9):
+        usage()
+        exit()
     
-    level = int(args["quantization"])
+    #SOMENTE QUANTIZAR
+    elif (sys_lenght == 5):
+        ap.add_argument("-i", "--image", required = True, help = "Path to the image")
+        ap.add_argument("-q", "--quantization", required = True, help = "Level of quantization") 
+        args = vars(ap.parse_args())
+       
+        #ABERTURA DA IMAGEM
+        image = cv2.imread(args["image"], 0)
+        original = cv2.imread(args["image"], 0)
+        height, width = image.shape[:2]
+        
+        level = int(args["quantization"]) 
+        image = quantization(image, height, width, level)
     
-    #ABERTURA DA IMAGEM
-    image = cv2.imread(args["image"], 0)
-    original = cv2.imread(args["image"], 0)
-    height, width = image.shape[:2]
+    
+    #SOMENTE AMOSTRAR
+    elif (sys_lenght == 7):
+        ap.add_argument("-i", "--image", required = True, help = "Path to the image")
+        ap.add_argument("-a", "--sampling", required = True, help = "Sampling of the image")
+        ap.add_argument("-t", "--technique", required = True, help = "Technique to be performed")
+        args = vars(ap.parse_args())
+        
+        #ABERTURA DA IMAGEM
+        image = cv2.imread(args["image"], 0)
+        original = cv2.imread(args["image"], 0)
+        height, width = image.shape[:2]
+        
     
     
-    #QUANTIZAÇÃO
-    image = quantization(image, height, width, level)
+    #AMOSTRAGEM E QUANTIZAÇÃO
+    elif (sys_lenght == 9):
+        ap.add_argument("-i", "--image", required = True, help = "Path to the image")
+        ap.add_argument("-q", "--quantization", required = True, help = "Level of quantization") 
+        ap.add_argument("-a", "--sampling", required = True, help = "Sampling of the image")
+        ap.add_argument("-t", "--technique", required = True, help = "Technique to be performed")
+        
+        #ABERTURA DA IMAGEM
+        image = cv2.imread(args["image"], 0)
+        original = cv2.imread(args["image"], 0)
+        height, width = image.shape[:2]
     
+    #--------------FIM ROTINA DE TRATAMENTO DA LINHA DE COMANDO--------------#
     
-    #AMOSTRAGEM
     
     
     
