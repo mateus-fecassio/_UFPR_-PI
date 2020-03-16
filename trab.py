@@ -13,26 +13,52 @@ def media(m_list):
 #TESTAR
 
 
-#def moda(m_list):
-   
+def moda(m_list):
+    l_temp = [0]*256
+    
+    for i in range(len(m_list)):
+        index = l_temp[i]
+        l_temp[index] += 1
+    
+    bigger = l_temp[0]
+    for i in range(256):
+        if (l_temp[i] > bigger):
+            bigger = l_temp[i]
+    
+    return bigger
 #TESTAR
 
 
-#def mediana(m_list):
-#    m_list.sort()
-#    
-#    lenght = len(m_list)
-#    
-#    #CASO PAR
-#    if (lenght % 2 == 0):
-#        
-#    
-#    #CASO ÍMPAR
-#    else:
-#        
-#    
-##TESTAR
+def mediana(m_list):
+    m_list.sort()
+    
+    lenght = len(m_list)
+    
+    #CASO PAR
+    if (lenght % 2 == 0):
+        l_inf = m_list(lenght/2)
+        l_sup = m_list(lenght/2 + 1)
+        
+        sum = (l_inf + l_sup)/2
+        value = int(sum)
+        
+    #CASO ÍMPAR
+    else:
+        cut = (lenght - 1)/2
+        value = m_list(cut+1)
+    
+    return value  
+#TESTAR
 
+def sampling(image, height, width, percentage, technique):
+    if (percentage > 0 and percentage < 100):
+        
+        
+        
+        
+    return image
+#FAZER
+    
 
 def most_significative(histogram, l_inf, l_sup):
     if (l_inf == l_sup):
@@ -114,11 +140,10 @@ def build_histogram(image, height, width):
     
 def usage():
     print('EXEMPLOS DE FORMAS DE USO:')
-    print('     - Somente quantizar: python3 trab.py -i exemplo.png -q 2')
-    print('     - Somente amostrar: python3 trab.py -i exemplo.png -a 50 -t media')
+    print('     - Somente quantizar: python3 trab.py -i exemplo.png(imagem) -q 2(nivel de quantizacao)')
+    print('     - Somente amostrar: python3 trab.py -i exemplo.png -a 50(porcentagem de amostragem) -t media(tecnica utilizada)')
     print('     - Quantizar e amostrar: python3 trab.py -i exemplo.png -q 2 -a 50 -t media')
 #FINALIZADO
-
 
 
 def main():
@@ -160,6 +185,10 @@ def main():
         original = cv2.imread(args["image"], 0)
         height, width = image.shape[:2]
         
+        percentage = int(args["sampling"])
+        technique = args["technique"]
+        image = sampling(image, height, width, percentage, technique)
+        
     
     
     #AMOSTRAGEM E QUANTIZAÇÃO
@@ -173,11 +202,17 @@ def main():
         image = cv2.imread(args["image"], 0)
         original = cv2.imread(args["image"], 0)
         height, width = image.shape[:2]
+        
+        #amostragem
+        percentage = int(args["sampling"])
+        technique = args["technique"]
+        image = sampling(image, height, width, percentage, technique)
+        
+        #quantização
+        level = int(args["quantization"]) 
+        image = quantization(image, height, width, level)
     
     #--------------FIM ROTINA DE TRATAMENTO DA LINHA DE COMANDO--------------#
-    
-    
-    
     
     
     #APRESENTAÇÃO DOS RESULTADOS
