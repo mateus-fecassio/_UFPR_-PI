@@ -1,0 +1,60 @@
+-------------- OUTPUT COMPARISON FOR COLORED IMAGES (R G B) --------------
+             CORREL hit CHISQR hit INTERSECT hit BHATTACHARYYA hit
+IMAGE NAME                                                        
+hulk1.png             1          0             1                 1
+hulk2.png             0          0             0                 1
+iron1.png             0          0             1                 1
+iron2.png             1          1             0                 1
+k3po1.png             1          1             0                 1
+k3po2.png             1          1             0                 1
+magneto1.png          1          1             1                 1
+magneto2.png          1          1             1                 1
+trooper1.png          0          1             1                 1
+trooper2.png          0          1             0                 1
+vader1.png            1          1             1                 1
+vader2.png            1          1             0                 1
+volve1.png            1          1             1                 1
+volve2.png            1          0             1                 1
+TOTAL GERAL          10         10             8                14
+
+
+
+-------------- OUTPUT COMPARISON FOR GRAY SCALE IMAGES --------------
+             CORREL hit CHISQR hit INTERSECT hit BHATTACHARYYA hit
+IMAGE NAME                                                        
+hulk1.png             0          0             0                 0
+hulk2.png             0          0             0                 0
+iron1.png             0          0             0                 1
+iron2.png             0          0             0                 0
+k3po1.png             1          1             0                 1
+k3po2.png             1          1             0                 1
+magneto1.png          1          1             1                 1
+magneto2.png          1          1             1                 1
+trooper1.png          0          0             0                 0
+trooper2.png          0          0             0                 0
+vader1.png            1          1             0                 1
+vader2.png            1          1             0                 0
+volve1.png            1          0             0                 1
+volve2.png            0          1             0                 1
+TOTAL GERAL           7          7             2                 8
+
+
+
+-------------- OUTPUT COMPARISON FOR GRAY IMAGES (EQUALIZED) --------------
+             CORREL hit CHISQR hit INTERSECT hit BHATTACHARYYA hit
+IMAGE NAME                                                        
+hulk1.png             0          0             0                 0
+hulk2.png             0          0             0                 0
+iron1.png             0          0             1                 0
+iron2.png             0          1             0                 0
+k3po1.png             0          0             0                 0
+k3po2.png             0          0             0                 0
+magneto1.png          0          0             1                 0
+magneto2.png          0          0             1                 0
+trooper1.png          0          0             0                 1
+trooper2.png          1          0             0                 0
+vader1.png            0          0             0                 0
+vader2.png            0          0             0                 0
+volve1.png            0          0             0                 0
+volve2.png            0          0             0                 0
+TOTAL GERAL           1          1             3                 1

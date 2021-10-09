@@ -142,7 +142,7 @@ def compare_hist_colored_images(files):
 # In[ ]:
 
 
-def compare_hist_gray_images(files):
+def compare_hist_gray_images(files, equalize):
     df = pd.DataFrame()
     for i in range(0,len(files),1):
         temporary = []
@@ -152,6 +152,8 @@ def compare_hist_gray_images(files):
         dic_bhattacharyya = {}
         
         selected_image = cv2.imread(files[i],0)
+        if (equalize == True):
+            selected_image = cv2.equalizeHist(selected_image)
         selected_image_class = get_class(files[i])
         
 
@@ -160,6 +162,8 @@ def compare_hist_gray_images(files):
             if (i != f):
                 # print(files[i], files[f])
                 compared_image = cv2.imread(files[f],0)
+                if (equalize == True):
+                    compared_image = cv2.equalizeHist(compared_image)
                 
                 hist1 = cv2.calcHist([selected_image], [0], None, [256], [0,256])
                 hist2 = cv2.calcHist([compared_image], [0], None, [256], [0,256])
@@ -231,16 +235,22 @@ def compare_hist_gray_images(files):
 
 
 if __name__ == "__main__":
-    files = list_images()
+    files = files = sorted(list_images())
 
     df_colored = compare_hist_colored_images(files)
-    print("-------------- OUTPUT COMPARISON FOR COLORED IMAGES --------------")
+    print("-------------- OUTPUT COMPARISON FOR COLORED IMAGES (R G B) --------------")
     print(df_colored)
 
     print("\n\n")
 
-    df_gray = compare_hist_gray_images(files)
-    print("-------------- OUTPUT COMPARISON FOR GRAY IMAGES --------------")
+    df_gray = compare_hist_gray_images(files, equalize=False)
+    print("-------------- OUTPUT COMPARISON FOR GRAY SCALE IMAGES --------------")
     print(df_gray)
+
+    print("\n\n")
+
+    df_gray_eq = compare_hist_gray_images(files, equalize=True)
+    print("-------------- OUTPUT COMPARISON FOR GRAY IMAGES (EQUALIZED) --------------")
+    print(df_gray_eq)
     
 
