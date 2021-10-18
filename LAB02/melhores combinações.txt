@@ -1,0 +1,30 @@
+ORIGINAL:
+banana01
+(hMin = 18 , sMin = 114, vMin = 130) (18,114,130)
+(hMax = 31 , sMax = 224, vMax = 253) (31,224,253)
+
+banana02
+(hMin = 19 , sMin = 54, vMin = 97) (19,54,97)
+(hMax = 83 , sMax = 236, vMax = 255) (83,236,255)
+
+banana03
+(hMin = 19 , sMin = 12, vMin = 134) (19,12,134)
+(hMax = 135 , sMax = 255, vMax = 255) (135,255,255)
+
+banana04
+(hMin = 19 , sMin = 12, vMin = 98) (19,12,98)
+(hMax = 175 , sMax = 248, vMax = 255) (175,248,255)
+
+banana05
+(hMin = 20 , sMin = 157, vMin = 211) (20,157,211)
+(hMax = 160 , sMax = 255, vMax = 255) (160,255,255)
+
+banana06
+(hMin = 18 , sMin = 50, vMin = 44) (18,50,44)
+(hMax = 95 , sMax = 242, vMax = 255) (95,242,255)
+
+
+MEDIDAS QUE SABEMOS QUE SÃO FIXAS:
+hMin = 18
+sMax  = 242
+vMax = 255
