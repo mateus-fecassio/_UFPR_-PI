@@ -1,0 +1,19 @@
+https://stackoverflow.com/questions/31998428/opencv-python-equalizehist-colored-image
+
+
+https://gitlab.c3sl.ufpr.br/vlg17/pi/-/blob/master/classificar.py
+
+
+
+VER MAIS:
+https://github.com/tavgreen/image_classification_of_simpsons_dataset
+https://medium.com/lejoaoconte/simpsons-characters-classifier-with-convolutional-neural-network-in-keras-library-36a6dd5791c6
+
+
+https://opencv24-python-tutorials.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_orb/py_orb.html
+
+
+https://www.google.com/search?q=simpsons+classification+using+machine+learning&oq=simpsons+classification+using+machine+learning&aqs=chrome..69i57.14327j0j9&sourceid=chrome&ie=UTF-8
+
+https://cvexplained.wordpress.com/2020/07/21/10-4-hu-moments/
+https://learnopencv.com/shape-matching-using-hu-moments-c-python/

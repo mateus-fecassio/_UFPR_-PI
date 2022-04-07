@@ -1,0 +1,18 @@
+https://realpython.com/python-opencv-color-spaces/
+
+https://stackoverflow.com/questions/10948589/choosing-the-correct-upper-and-lower-hsv-boundaries-for-color-detection-withcv/48367205#48367205
+
+https://www.masterclass.com/articles/how-to-use-hsv-color-model-in-photography#what-is-saturation
+
+https://docs.python.org/3/library/statistics.html
+
+
+
+
+---ver variancia ou desvio padrão da máscara a medida que os valores
+são alterados
+
+
+
+verde
+(hMin = 26 , sMin = 84, vMin = 70), (hMax = 87 , sMax = 225, vMax = 255)

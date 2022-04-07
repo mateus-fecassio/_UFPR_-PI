@@ -11,13 +11,6 @@ import matplotlib.pyplot as plt
 import random
 import time
 import timeit
-# from mpl_toolkits.mplot3d import Axes3D
-# from matplotlib import cm
-# from matplotlib import colors
-# from matplotlib.colors import hsv_to_rgb
-# from glob import glob
-# import os
-# from os.path import join
 
 
 # In[ ]:
